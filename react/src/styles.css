@@ -1,0 +1,452 @@
+/* =============================================================
+   BonfireRest Videogames — estilos propios sobre Bootstrap 5
+
+   Índice
+   1. Variables de color (custom properties)
+   2. Base
+   3. Navbar
+   4. Hero ............ FLEXBOX
+   5. Barra de filtros  FLEXBOX
+   6. Tarjetas
+   7. Contacto ........ CSS GRID
+   8. Footer .......... FLEXBOX
+   9. Carrito de compras
+   10. Responsivo (media queries)
+   ============================================================= */
+
+/* ---------- 1. Variables ---------- */
+:root {
+    --fondo: #14110e;
+    --fondo-elevado: #201b16;
+    --borde: #3a3128;
+    --acento: #c9812a;
+    --acento-claro: #f0b35c;
+    --rojo: #6b1e23;
+    --texto: #d8d2c4;
+    --texto-suave: #a89e8d;
+    --fuente-titulos: 'Cinzel', Georgia, serif;
+    --fuente-texto: 'EB Garamond', Georgia, serif;
+}
+
+/* ---------- 2. Base ---------- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fuente-texto);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--texto);
+    background-color: var(--fondo);
+    background-image: radial-gradient(circle at 50% 0%, rgba(201, 129, 42, 0.08), transparent 60%);
+}
+
+h1, h2, h3, .h5 {
+    font-family: var(--fuente-titulos);
+}
+
+h2 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: var(--acento);
+    border-left: 3px solid var(--rojo);
+    padding-left: 14px;
+}
+
+/* Las secciones quedan visibles bajo la navbar fija al usar los enlaces ancla */
+section[id] {
+    scroll-margin-top: 70px;
+}
+
+a {
+    color: var(--acento);
+}
+
+/* ---------- 3. Navbar ---------- */
+.navbar {
+    background: linear-gradient(180deg, #211c17 0%, var(--fondo) 100%);
+    border-bottom: 1px solid var(--rojo);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand {
+    font-family: var(--fuente-titulos);
+    letter-spacing: 2px;
+    color: var(--acento) !important;
+    text-shadow: 0 0 12px rgba(201, 129, 42, 0.5);
+}
+
+.navbar .nav-link {
+    color: var(--texto);
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .nav-link.active {
+    color: var(--acento-claro);
+}
+
+/* ---------- 4. Hero (FLEXBOX) ----------
+   flex-direction: column apila los elementos y
+   justify-content/align-items los centran vertical y horizontalmente. */
+.hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(ellipse at 50% 100%, rgba(217, 86, 43, 0.25), transparent 60%),
+        linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.4));
+    border-bottom: 1px solid var(--borde);
+}
+
+.hero-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+    padding-block: 4rem;
+}
+
+.hero-etiqueta {
+    margin: 0;
+    font-family: var(--fuente-titulos);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: var(--acento);
+}
+
+.hero-titulo {
+    margin: 0;
+    font-size: clamp(1.8rem, 5vw, 3.2rem);
+    color: #f2ead8;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+.hero-texto {
+    margin: 0;
+    max-width: 560px;
+    color: var(--texto-suave);
+}
+
+/* ---------- Botones ---------- */
+.btn-primary {
+    --bs-btn-bg: var(--acento);
+    --bs-btn-border-color: var(--acento);
+    --bs-btn-color: var(--fondo);
+    --bs-btn-hover-bg: var(--acento-claro);
+    --bs-btn-hover-border-color: var(--acento-claro);
+    --bs-btn-hover-color: var(--fondo);
+    --bs-btn-active-bg: var(--acento-claro);
+    --bs-btn-active-border-color: var(--acento-claro);
+    --bs-btn-active-color: var(--fondo);
+    font-weight: 600;
+}
+
+.btn-outline-danger {
+    --bs-btn-color: #e57373;
+    --bs-btn-border-color: #8a2b30;
+    --bs-btn-hover-bg: #8a2b30;
+    --bs-btn-hover-border-color: #8a2b30;
+}
+
+/* ---------- 5. Barra de filtros (FLEXBOX) ----------
+   flex-wrap permite que los botones bajen de línea en móvil. */
+.barra-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* Se usan las variables de Bootstrap (--bs-btn-*) para controlar
+   todos los estados del botón: normal, hover, foco y presionado. */
+.btn-filtro {
+    --bs-btn-color: var(--texto);
+    --bs-btn-bg: var(--fondo-elevado);
+    --bs-btn-border-color: var(--borde);
+    --bs-btn-hover-color: var(--acento-claro);
+    --bs-btn-hover-bg: var(--fondo-elevado);
+    --bs-btn-hover-border-color: var(--acento);
+    --bs-btn-active-color: var(--fondo);
+    --bs-btn-active-bg: var(--acento);
+    --bs-btn-active-border-color: var(--acento);
+    --bs-btn-focus-shadow-rgb: 201, 129, 42;
+    border-radius: 999px;
+    padding: 0.35rem 1rem;
+    font-family: var(--fuente-titulos);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* Botón de la categoría seleccionada */
+.btn-filtro.activo {
+    --bs-btn-color: var(--fondo);
+    --bs-btn-bg: var(--acento);
+    --bs-btn-border-color: var(--acento);
+    --bs-btn-hover-color: var(--fondo);
+    --bs-btn-hover-bg: var(--acento-claro);
+    --bs-btn-hover-border-color: var(--acento-claro);
+}
+
+.contador,
+.sin-resultados {
+    color: var(--texto-suave);
+    font-style: italic;
+}
+
+/* ---------- 6. Tarjetas ---------- */
+.card {
+    background-color: var(--fondo-elevado);
+    border: 1px solid var(--borde);
+    border-top: 2px solid var(--acento);
+    color: var(--texto);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta-juego:hover {
+    transform: translateY(-4px);
+    border-color: var(--acento);
+    box-shadow: 0 8px 22px rgba(201, 129, 42, 0.25);
+}
+
+/* Las portadas de PS5 tienen proporción ~4:5 */
+.card-img-top {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    background-color: #0f0c0a;
+}
+
+.card-title {
+    font-size: 1.05rem;
+    color: #f2ead8;
+    letter-spacing: 0.5px;
+}
+
+.card-text {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+}
+
+.etiqueta-categoria {
+    background-color: transparent;
+    color: var(--acento);
+    border: 1px solid var(--acento);
+    font-family: var(--fuente-titulos);
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.precio {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* ---------- Formularios (tema oscuro) ---------- */
+.form-control,
+.form-select {
+    background-color: #0f0c0a;
+    border-color: var(--borde);
+    color: var(--texto);
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: #0f0c0a;
+    color: var(--texto);
+    border-color: var(--acento);
+    box-shadow: 0 0 0 0.2rem rgba(201, 129, 42, 0.25);
+}
+
+.form-control::placeholder {
+    color: #6f675b;
+}
+
+.form-label {
+    font-family: var(--fuente-titulos);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.invalid-feedback {
+    color: #ef8a8a;
+}
+
+/* ---------- 7. Contacto (CSS GRID) ----------
+   Móvil: una sola columna (info arriba, formulario abajo).
+   Escritorio: ver media query, dos columnas 1fr | 2fr. */
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.contacto-info,
+.formulario {
+    background-color: var(--fondo-elevado);
+    border: 1px solid var(--borde);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+.contacto-info h3 {
+    color: var(--acento);
+}
+
+.contacto-info li {
+    margin-bottom: 0.4rem;
+}
+
+/* ---------- 8. Footer (FLEXBOX) ---------- */
+footer {
+    background: linear-gradient(0deg, var(--fondo) 0%, #211c17 100%);
+    border-top: 1px solid var(--rojo);
+    color: #9a9184;
+}
+
+.pie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+}
+
+.pie nav {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.pie a {
+    color: var(--acento);
+    text-decoration: none;
+}
+
+.pie a:hover {
+    color: var(--acento-claro);
+}
+
+/* ---------- 9. Carrito de compras ---------- */
+.btn-carrito {
+    --bs-btn-color: var(--acento);
+    --bs-btn-border-color: var(--acento);
+    --bs-btn-hover-color: var(--fondo);
+    --bs-btn-hover-bg: var(--acento);
+    --bs-btn-hover-border-color: var(--acento);
+    --bs-btn-active-color: var(--fondo);
+    --bs-btn-active-bg: var(--acento-claro);
+    --bs-btn-active-border-color: var(--acento-claro);
+    font-family: var(--fuente-titulos);
+    letter-spacing: 1px;
+}
+
+.contador-carrito {
+    background-color: var(--rojo);
+    color: #fff;
+    margin-left: 0.35rem;
+}
+
+/* Panel lateral (offcanvas) con el tema oscuro */
+.panel-carrito {
+    --bs-offcanvas-bg: var(--fondo-elevado);
+    --bs-offcanvas-color: var(--texto);
+    border-left: 1px solid var(--rojo);
+}
+
+.panel-carrito .offcanvas-title {
+    color: var(--acento);
+    border: 0;
+    padding: 0;
+}
+
+.list-group-item {
+    background-color: #1a1612;
+    border-color: var(--borde);
+    color: var(--texto);
+}
+
+/* Cada producto del carrito: info a la izquierda, controles a la derecha (Flexbox) */
+.item-carrito {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.btn-cantidad {
+    --bs-btn-color: var(--texto);
+    --bs-btn-border-color: var(--borde);
+    --bs-btn-hover-color: var(--fondo);
+    --bs-btn-hover-bg: var(--acento);
+    --bs-btn-hover-border-color: var(--acento);
+    min-width: 2rem;
+}
+
+.subtotal-carrito {
+    color: var(--texto-suave);
+}
+
+.cantidad {
+    min-width: 1.75rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.total-carrito {
+    font-family: var(--fuente-titulos);
+    font-size: 1.15rem;
+    border-top: 1px solid var(--borde);
+    padding-top: 0.75rem;
+}
+
+.total-carrito strong {
+    color: #fff;
+    font-size: 1.35rem;
+}
+
+/* ---------- 10. Responsivo ---------- */
+/* Navbar compacta en teléfonos: logo, botón Carrito y menú en una sola línea */
+@media (max-width: 575.98px) {
+    .navbar-brand {
+        font-size: 1.05rem;
+        letter-spacing: 1px;
+        margin-right: 0.5rem;
+    }
+
+    .btn-carrito {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.85rem;
+        letter-spacing: 0;
+    }
+
+    .navbar-toggler {
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .pie {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 992px) {
+    .contacto-grid {
+        grid-template-columns: 1fr 2fr;
+        align-items: start;
+    }
+}
