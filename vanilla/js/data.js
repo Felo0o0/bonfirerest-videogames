@@ -1,0 +1,96 @@
+/* =============================================================
+   data.js — Catálogo de BonfireRest Videogames
+
+   Arreglo de OBJETOS: cada videojuego es un objeto con las
+   propiedades que pide el caso (nombre, categoría, precio,
+   descripción, imagen) más un id único para identificarlo.
+
+   app.js recorre este arreglo para generar las tarjetas;
+   el HTML no contiene ninguna tarjeta escrita a mano.
+
+   Precios: el menor entre Weplay y Sniper.cl (consultados el
+   11-10-2026). Ver README.md para la comparación completa.
+   ============================================================= */
+
+const videojuegos = [
+    {
+        id: "elden-ring-nightreign",
+        nombre: "Elden Ring Nightreign",
+        categoria: "RPG",
+        precio: 34990,
+        descripcion: "Aventura cooperativa en el universo de Elden Ring: hasta tres jugadores sobreviven tres días en Limveld.",
+        imagen: "img/elden-ring-nightreign.jpg"
+    },
+    {
+        id: "metaphor-refantazio",
+        nombre: "Metaphor: ReFantazio",
+        categoria: "RPG",
+        precio: 74990,
+        descripcion: "RPG de fantasía de los creadores de Persona, con combate por turnos y una carrera por el trono.",
+        imagen: "img/metaphor-refantazio.jpg"
+    },
+    {
+        id: "final-fantasy-xvi",
+        nombre: "Final Fantasy XVI",
+        categoria: "RPG",
+        precio: 49990,
+        descripcion: "Clive Rosfield busca venganza en Valisthea, un mundo dominado por los cristales madre y los Eikons.",
+        imagen: "img/final-fantasy-xvi.jpg"
+    },
+    {
+        id: "final-fantasy-tactics",
+        nombre: "Final Fantasy Tactics: The Ivalice Chronicles",
+        categoria: "RPG",
+        precio: 59990,
+        descripcion: "Versión renovada del clásico de estrategia por turnos ambientado en la Guerra de los Leones.",
+        imagen: "img/final-fantasy-tactics.jpg"
+    },
+    {
+        id: "ghost-of-yotei",
+        nombre: "Ghost of Yōtei",
+        categoria: "Acción",
+        precio: 39990,
+        descripcion: "Atsu recorre las tierras de Ezo en 1603 en una historia de venganza de mundo abierto.",
+        imagen: "img/ghost-of-yotei.jpg"
+    },
+    {
+        id: "god-of-war-ragnarok",
+        nombre: "God of War Ragnarök",
+        categoria: "Acción",
+        precio: 42990,
+        descripcion: "Kratos y Atreus viajan por los Nueve Reinos mientras se acerca el fin del mundo nórdico.",
+        imagen: "img/god-of-war-ragnarok.jpg"
+    },
+    {
+        id: "spider-man-2",
+        nombre: "Marvel's Spider-Man 2",
+        categoria: "Acción",
+        precio: 42990,
+        descripcion: "Peter Parker y Miles Morales se enfrentan a Venom y Kraven en una Nueva York más grande.",
+        imagen: "img/spider-man-2.jpg"
+    },
+    {
+        id: "spider-man-miles-morales",
+        nombre: "Marvel's Spider-Man: Miles Morales",
+        categoria: "Acción",
+        precio: 32990,
+        descripcion: "Miles Morales protege Harlem con nuevos poderes de bioelectricidad y camuflaje.",
+        imagen: "img/spider-man-miles-morales.jpg"
+    },
+    {
+        id: "astro-bot",
+        nombre: "Astro Bot",
+        categoria: "Plataformas",
+        precio: 32990,
+        descripcion: "Plataformas 3D que aprovecha el control DualSense para rescatar a la tripulación de Astro.",
+        imagen: "img/astro-bot.jpg"
+    },
+    {
+        id: "battlefield-6",
+        nombre: "Battlefield 6",
+        categoria: "Shooter",
+        precio: 44990,
+        descripcion: "Shooter bélico con campaña y multijugador a gran escala con entornos destructibles.",
+        imagen: "img/battlefield-6.jpg"
+    }
+];
