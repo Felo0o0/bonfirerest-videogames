@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" role="img" aria-label="Portada genérica">
+<rect width="300" height="400" fill="#1a1612"/>
+<rect x="12" y="12" width="276" height="376" fill="none" stroke="#c9812a" stroke-opacity=".4"/>
+<path d="M150 120 C175 155 185 175 172 200 C165 213 135 213 128 200 C115 175 135 160 150 120Z" fill="#c9812a" opacity=".7"/>
+<text x="150" y="270" text-anchor="middle" font-family="Georgia, serif" font-size="20" letter-spacing="3" fill="#f2ead8">BONFIREREST</text>
+<text x="150" y="300" text-anchor="middle" font-family="Georgia, serif" font-size="12" letter-spacing="4" fill="#c9812a">SIN PORTADA</text>
+</svg>
